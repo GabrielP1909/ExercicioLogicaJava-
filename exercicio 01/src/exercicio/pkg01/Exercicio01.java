@@ -5,19 +5,33 @@
  */
 package exercicio.pkg01;
 
-/**
- *
- * @author aluno.saolucas
- */
+import java.util.Scanner;
+
 public class Exercicio01 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("tesste");
-    
+    public static boolean nmrPrft(int nmr1) {
+
+        if (nmr1 <= 1) {
+            return false;
+        }
+        int somaD = 0;
+        for (int i = 1; i < nmr1; i++) {
+            if (nmr1 % i == 0) {
+                somaD += i;
+            }
+        }
+        return somaD == nmr1;
+
     }
-    
+
+    public static void main(String[] args) {
+
+        Scanner objNr = new Scanner(System.in);
+
+        System.out.println("Digite um número inteiro:");
+        int nmr1 = objNr.nextInt();
+
+        System.out.println(nmrPrft(nmr1));
+    }
+
 }
