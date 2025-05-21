@@ -1,21 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package exercicio.pkg02;
 
-/**
- *
- * @author aluno.saolucas
- */
+import java.util.Scanner;
+
+
 public class Exercicio02 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+  
+  public static void main(String[] args) {
+
+        char[] vetor = {'a', 'e', 'i', 'o', 'u'};
+
+        Scanner objNr = new Scanner(System.in);
+
+        System.out.println("Digite uma palavra");
+        String vogal = objNr.nextLine();
+
+        String resultado = (vogais(vogal));
+        System.out.println("Palavra atualizada: " + resultado);
     }
-    
+
+    public static String vogais(String vogal) { 
+
+        String palavraM = "";
+
+        String vogalAtt = vogal.toLowerCase();
+        for (int i = 0; i < vogalAtt.length(); i++) {
+        char Vletra = vogalAtt.charAt(i);
+        
+        if(Vletra == 'a' || Vletra == 'e' || Vletra == 'i' || Vletra == 'o' || Vletra == 'u'){
+            palavraM += "*";
+
+        }
+        else {
+            palavraM += Vletra;
+        }
+        }
+        return palavraM;
+    }
 }
+
+    
+  
+    
