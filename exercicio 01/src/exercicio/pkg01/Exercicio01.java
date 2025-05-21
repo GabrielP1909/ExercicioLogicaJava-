@@ -8,7 +8,9 @@ package exercicio.pkg01;
 import java.util.Scanner;
 
 public class Exercicio01 {
-
+    
+//finalizado
+    
     public static boolean nmrPrft(int nmr1) {
 
         if (nmr1 <= 1) {
