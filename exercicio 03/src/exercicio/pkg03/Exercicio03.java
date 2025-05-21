@@ -4,34 +4,50 @@ import java.util.Scanner;
 
 public class Exercicio03 {
 
- public static void main(String[] args) {
-        
-       Scanner objNr = new Scanner(System.in);
+    public static void main(String[] args) {
 
-        System.out.println("Digite uma palavra: ");
-        String palavra = objNr.nextLine();  
+        Scanner objNr = new Scanner(System.in);
 
-        String resultado = VogaisPorAsterisco(palavra);
+        int[] nmrs = new int[5];
 
-        System.out.println("Resultado: " + resultado);
+        System.out.print("Digite um número inteiro: ");
+        nmrs[0] = objNr.nextInt();
+
+        System.out.print("Digite outro número inteiro: ");
+        nmrs[1] = objNr.nextInt();
+
+        System.out.print("Digite outro número inteiro: ");
+        nmrs[2] = objNr.nextInt();
+
+        System.out.print("Digite outro número inteiro: ");
+        nmrs[3] = objNr.nextInt();
+
+        System.out.print("Digite mais um número inteiro: ");
+        nmrs[4] = objNr.nextInt();
+
+        int maior = MaiorAb(nmrs);
+
+        System.out.println("O maior valor absoluto é: " + maior);
     }
 
-    public static String VogaisPorAsterisco(String palavra) {
-       
-        String palavraAtt = "";
+    public static int MaiorAb(int[] nmr) {
 
-        for (int i = 0; i < palavra.length(); i++) {
-            char trocador = palavra.charAt(i);
-            char letraMinuscula = Character.toLowerCase(trocador);
+        int maior = 0;
 
-            if (letraMinuscula == 'a' || letraMinuscula == 'e' ||
-                letraMinuscula == 'i' || letraMinuscula == 'o' || letraMinuscula == 'u') {
-                palavraAtt += '*';
+        for (int i = 0; i < nmr.length; i++) {
+            int valorAbs;
+
+            if (nmr[i] < 0) {
+                valorAbs = -nmr[i];
             } else {
-                palavraAtt += trocador;
+                valorAbs = nmr[i];
+            }
+            if (valorAbs > maior) {
+                maior = valorAbs;
             }
         }
 
-        return palavraAtt;
+        return maior;
     }
+
 }
